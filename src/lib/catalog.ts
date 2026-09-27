@@ -1,4 +1,5 @@
 import { requestJson } from "./api";
+import { staticCatalog } from "@app/data/catalog";
 
 export interface LocalizedText {
   pt: string;
@@ -25,7 +26,7 @@ export interface Product {
   id: string;
   names: LocalizedText;
   descriptions: LocalizedText;
-  button_texts: LocalizedText;
+  button_texts: Partial<LocalizedText>;
   image_url: string;
   affiliate_url: string;
   active: boolean;
@@ -51,9 +52,8 @@ function asCatalog(data: unknown): Catalog {
   return body as unknown as Catalog;
 }
 
-export async function fetchCatalog(signal?: AbortSignal): Promise<Catalog> {
-  const data = await requestJson(`${ENDPOINT}?action=catalog`, { signal });
-  return asCatalog(data);
+export function fetchCatalog(_signal?: AbortSignal): Promise<Catalog> {
+  return Promise.resolve(structuredClone(staticCatalog));
 }
 
 export async function adminLogin(password: string): Promise<string> {
