@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tatiana Meneses — viagens, experiências e recomendações para tornar cada viagem mais especial. Brasileira vivendo em Portugal." />
+    <meta property="og:title" content="Tatiana Meneses — Viagens & Recomendações" />
+    <meta property="og:description" content="Viagens, experiências e recomendações para tornar cada viagem mais especial." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#122c49" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300..800&display=swap" rel="stylesheet" />
+    <title>Tatiana Meneses — Viagens & Recomendações</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("tm-theme");
+          var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
